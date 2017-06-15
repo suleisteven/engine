@@ -1,4 +1,4 @@
-﻿
+
 module('EventTarget');
 
 test('basic test', function () {

@@ -1,4 +1,4 @@
-﻿module('time');
+module('time');
 
 var tolerance = 0.000001;
 

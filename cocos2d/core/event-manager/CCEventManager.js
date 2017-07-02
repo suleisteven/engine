@@ -951,8 +951,13 @@ cc.eventManager = {
 
             if (recursive === true) {
                 var locChildren = listenerType.getChildren(), len;
-                for (i = 0, len = locChildren.length; i< len; i++)
-                    _t.removeListeners(locChildren[i], true);
+				
+				// update by sulei, fix bug
+				if(locChildren)
+				{
+					for (i = 0, len = locChildren.length; i< len; i++)
+						_t.removeListeners(locChildren[i], true);
+				}
             }
         } else {
             if (listenerType === cc.EventListener.TOUCH_ONE_BY_ONE)

@@ -199,5 +199,23 @@
     "entries": [
       "./cocos2d/core/components/CCStudioComponent.js"
     ]
-  }
+  },
+    {
+        "name": "Custom",
+        "entries": [
+            "./extensions/custom/index.js"
+        ]
+    },
+    {
+        "name": "PayComponent",
+        "entries": [
+            "./extensions/pay/index.js"
+        ]
+    },
+	{
+        "name": "UnifySocket",
+        "entries": [
+            "./extensions/network/index.js"
+        ]
+    }
 ]

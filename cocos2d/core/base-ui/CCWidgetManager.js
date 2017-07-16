@@ -409,11 +409,10 @@ var activeWidgets = [];
 // updateAlignment from scene to node recursively
 function updateAlignment (node) {
     var parent = node._parent;
-    if (cc.Node.isNode(parent)) {
+    if (parent) {
         updateAlignment(parent);
     }
-    var widget = node._widget ||
-                 node.getComponent(cc.Widget);  // node._widget will be null when widget is disabled
+    var widget = node._widget;
     if (widget) {
         align(node, widget);
     }

@@ -326,7 +326,7 @@ cc.eventManager = {
     },
 
     _sortEventListenersOfSceneGraphPriorityDes: function (l1, l2) {
-        var locNodePriorityMap = cc.eventManager._nodePriorityMap, 
+        var locNodePriorityMap = cc.eventManager._nodePriorityMap,
             node1 = l1._getSceneGraphPriority(),
             node2 = l2._getSceneGraphPriority();
         if (!l2 || !node2 || !locNodePriorityMap[node2.__instanceId])
@@ -951,13 +951,10 @@ cc.eventManager = {
 
             if (recursive === true) {
                 var locChildren = listenerType.getChildren(), len;
-				
-				// update by sulei, fix bug
-				if(locChildren)
-				{
-					for (i = 0, len = locChildren.length; i< len; i++)
-						_t.removeListeners(locChildren[i], true);
-				}
+                if (locChildren != null) {
+                    for (i = 0, len = locChildren.length; i < len; i++)
+                        _t.removeListeners(locChildren[i], true);
+                }
             }
         } else {
             if (listenerType === cc.EventListener.TOUCH_ONE_BY_ONE)

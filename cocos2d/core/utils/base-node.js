@@ -36,6 +36,7 @@ function updateOrder (node) {
     }
 }
 
+var SCALE_CHANGED = 'scale-changed';
 var POSITION_CHANGED = 'position-changed';
 var SIZE_CHANGED = 'size-changed';
 var ANCHOR_CHANGED = 'anchor-changed';
@@ -335,6 +336,9 @@ var BaseNode = cc.Class({
                 if (this._scaleX !== value) {
                     this._scaleX = value;
                     this._sgNode.scaleX = value;
+					
+					// send event
+					   this.emit(SCALE_CHANGED);
                 }
             },
         },
@@ -356,6 +360,9 @@ var BaseNode = cc.Class({
                 if (this._scaleY !== value) {
                     this._scaleY = value;
                     this._sgNode.scaleY = value;
+					
+					// send event
+					   this.emit(SCALE_CHANGED);
                 }
             },
         },
@@ -920,6 +927,9 @@ var BaseNode = cc.Class({
             this._scaleX = scaleX;
             this._scaleY = scaleY;
             this._sgNode.setScale(scaleX, scaleY);
+			
+					// send event
+					   this.emit(SCALE_CHANGED);
         }
     },
 

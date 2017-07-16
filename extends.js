@@ -60,8 +60,16 @@ if (!(CC_EDITOR && Editor.isMainProcess)) {
     
     require('./extensions/ccpool/CCNodePool.js');
     require('./extensions/ccpool/CCPool.js');
+	
+	require('./extensions/network');
 }
 
 if (!CC_EDITOR || !Editor.isMainProcess) {
     require('./cocos2d/deprecated');
 }
+
+require('./extensions/custom');
+require('./extensions/pay');
+
+
+

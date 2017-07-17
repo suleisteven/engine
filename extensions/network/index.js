@@ -78,7 +78,7 @@ UnifySocket = cc.Class({
             {
                 this._socket.setProxy(this._proxyIP, this._proxyPort); // 设置代理
             }
-            this._socket.setEnableCrypt(false); // 设置是否加密
+            this._socket.setEnableCrypt(true); // 设置是否加密
 			this._socket.setEnableDecodeProto(false); // 设置需要底层解析proto
 			this._socket.setEnableZlib(false); // 设置需要底层开启zlib进行数据压缩解压
 

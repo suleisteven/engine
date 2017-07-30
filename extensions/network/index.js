@@ -68,7 +68,7 @@ UnifySocket = cc.Class({
 		} else{
 			this._useAsio = false;
 		}
-		
+		this._useAsio = false;
 		
         if (this._useAsio) // native，使用asio
         {

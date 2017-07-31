@@ -51,8 +51,9 @@ UnifySocket = cc.Class({
      * @param service
      * @param proxyIP
      * @param proxyPort
+	 * @pram useAsio
      */
-    ctor: function (dstIP, dstPort, service, proxyIP, proxyPort) {
+    ctor: function (dstIP, dstPort, service, proxyIP, proxyPort, useAsio) {
 
 
 
@@ -62,13 +63,13 @@ UnifySocket = cc.Class({
         this._proxyIP = proxyIP;
         this._proxyPort = proxyPort;
 
-		if(cc.sys.isNative)
+		if(cc.sys.isNative && useAsio)
 		{
 			this._useAsio = true;
 		} else{
 			this._useAsio = false;
 		}
-		this._useAsio = false;
+		
 		
         if (this._useAsio) // native，使用asio
         {
